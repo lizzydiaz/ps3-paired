@@ -28,18 +28,22 @@ data = pd.DataFrame(np.random.rand(100), columns=['Random Numbers'])
 
 def preview_data(df):
   head_data = df.head()
+  df_describe = df.describe()
   histogram = alt.Chart(df).mark_bar().encode(
     alt.X('Random Numbers:Q', bin=True, title='Random Numbers'),
     alt.Y('count()', title='Count')
   ).properties(
     title='Histogram of Random Numbers'
     )
-  return [head_data, histogram]
+  return [head_data, df_describe, histogram]
 
 result = preview_data(data)
-result[1]
+result[2]
 ```
 
 git push origin merge_conflict_yuna_2
 git switch merge_conflict_yuna_2
 git commit -m merge_conflict_yuna_2
+git add file.qmd
+git commit -m main_branch
+git push -u origin branch_name
