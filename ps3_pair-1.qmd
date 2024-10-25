@@ -1,6 +1,6 @@
 ---
 title: "30538 Problem Set 3: git pair"
-author: "Lizzy Diaz"
+author: "Lizzy Diaz and Yuna Baek"
 format: 
   pdf:
     keep-tex: true
@@ -30,3 +30,7 @@ def preview_data(df):
 
 preview_data(data)
 ```
+
+git push origin merge_conflict_yuna_2
+git switch merge_conflict_yuna_2
+git commit -m merge_conflict_yuna_2
