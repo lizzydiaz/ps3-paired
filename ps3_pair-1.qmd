@@ -21,14 +21,29 @@ include-before-body:
 ```{python}
 import pandas as pd
 import numpy as np
+import altair as alt
 
 np.random.seed(42)
 data = pd.DataFrame(np.random.rand(100), columns=['Random Numbers'])
 
 def preview_data(df):
-    df_head = df.head()
-    df_describe = df.describe()
-    return[df_head, df_describe]
+  head_data = df.head()
+  df_describe = df.describe()
+  histogram = alt.Chart(df).mark_bar().encode(
+    alt.X('Random Numbers:Q', bin=True, title='Random Numbers'),
+    alt.Y('count()', title='Count')
+  ).properties(
+    title='Histogram of Random Numbers'
+    )
+  return [head_data, df_describe, histogram]
 
-preview_data(data)
+result = preview_data(data)
+result[2]
 ```
+
+git push origin merge_conflict_yuna_2
+git switch merge_conflict_yuna_2
+git commit -m merge_conflict_yuna_2
+git add file.qmd
+git commit -m main_branch
+git push -u origin branch_name
