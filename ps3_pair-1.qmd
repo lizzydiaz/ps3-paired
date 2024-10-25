@@ -26,11 +26,10 @@ np.random.seed(42)
 data = pd.DataFrame(np.random.rand(100), columns=['Random Numbers'])
 
 def preview_data(df):
-    print(df.head())
+    df_head = df.head()
+    df_describe = df.describe()
+    return[df_head, df_describe]
+    print()
 
 preview_data(data)
 ```
-
-git push origin merge_conflict_yuna_2
-git switch merge_conflict_yuna_2
-git commit -m merge_conflict_yuna_2
